@@ -1,0 +1,25 @@
+package ex03_number;
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+
+		// 산술 연산
+		// /와 %의 계산이 중요함
+		int a = 7;
+		int b = 2;
+		int result1 = a + b; // 9
+		int result2 = a - b; // 5
+		int result3 = a * b; // 14
+		int result4 = a / b; // 3		// 나눈 몫의 값
+		int result5 = a % b; // 1		// 나누고 난 뒤 나머지 값
+		
+		System.out.println(result1);
+		System.out.println(result2);
+		System.out.println(result3);
+		System.out.println(result4);
+		System.out.println(result5);
+
+	}
+
+}
