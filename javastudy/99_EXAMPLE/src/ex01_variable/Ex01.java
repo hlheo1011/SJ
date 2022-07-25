@@ -86,6 +86,43 @@ public class Ex01 {
 		}
 		System.out.println(total3);
 		
+		// 연습문제 11번
+		for(int day = 1; day <= 3; day++) {
+			for(int study = 1; study <= 8; study++) {
+			System.out.print(day + "일차" + study + "교시 ");
+			}
+		}
+		
+		System.out.println();
+		// 연습문제 12번 
+		for(int dan = 2; dan <= 9; dan++) {
+			for(int number = 1; number <= 9; number++) {
+				System.out.print(dan + "x" + number + "=" + (dan * number + " "));
+			}
+		}
+		
+		System.out.println();
+		System.out.println();
+		// 연습문제 13번
+		for(int dan = 2; dan <= 5; dan++) {
+			for(int number = 1; number <= 9; number++) {
+				System.out.print(dan + "x" + number +"=" + (dan * number + " "));
+				if(number == 5 && dan == 5) {
+					break;
+				}
+			}
+		}
+		
+		System.out.println();
+		System.out.println();
+		// 연습문제 14번
+		
+		for(int a = 1; a <= 9; a++) {
+			for(int dan = 2; dan <= 9; dan++) {
+				System.out.print(dan + "x" + a + "=" + (dan * a) + "\t");
+			}	System.out.println();
+		}
+
 
 		
 
