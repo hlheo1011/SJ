@@ -125,6 +125,10 @@ public class Ex01 {
 
 
 		
+		
+		// 3. 문자열 길이 반환
+		String name = "우영우는사랑이다";
+		System.out.println(name.substring(4, 8));
 
 	}
 
