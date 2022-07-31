@@ -62,6 +62,40 @@ public class Exam03_My_Answer {
 	// 마지막 정수 입력 >>> -5
 	// 평균 : 0
 	public static void q4() {
+		 // 소수점으로 보여주기위해 데이터 타임 double 로 변수 선언
+        // 평균값 보여주기 위한 변수
+        double begin = 0.0;  // 0
+
+        // 정수 입력받기 위한 변수 선언
+        int end = 0;    // 입력 받은 정수
+
+        // 값을 입력받기 위한 스캐너 객체 생성
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println("마지막 정수를 입력해주세요.");
+
+        // 스캐너 객체를 활용하여 입력받은 값 변수에 넣기
+        end = sc.nextInt();
+
+        // 입력받은 정수의 값이 0보다 클경우
+        // - 값일 경우 음수여서 0으로 처리
+        if (end > 0) {
+            // 합계를 하기위한 변수 선언
+            int sum = 0;
+            // 입력받은 값을 반복을 하면서 값을 1개씩 더해줌
+            for (int i = 0; i <= end; i++) {
+                //ex : 0 ~ 5 까지의 값을 sum 변수에 넣고 더해줌
+                // +=를 활용해도 되고  sum = sum + i; 로 해도 무방함
+                // +=는 값을 누적해서 더하는 문법
+                sum += i;
+            }
+            begin = sum / end;
+        }
+
+        System.out.println("입력한 정수의 평균값은 = " + begin + " 입니다.");
+
+		/*
 		int begin = 0;  // 0
 		Scanner sc = new Scanner(System.in);
 		System.out.print("마지막 정수 입력 >>> ");
@@ -72,6 +106,7 @@ public class Exam03_My_Answer {
 			
 			}	
 		System.out.println(end);
+		*/
 	}
 	
 	// 문제5. 1부터 100 사이의 모든 정수를 대상으로 짝수들의 합계와 홀수들의 합계를 각각 출력하시오.
@@ -137,11 +172,33 @@ public class Exam03_My_Answer {
 	// 변환 전 파일명 >>> happy.jpg
 	// 변환 후 파일명 = happy_1658792128410.jpg
 	public static void q8() {
-		String beforeName = "";  // 변환 전 파일명
-		String afterName = "";   // 변환 후 파일명
-		System.out.println("변환 전 파일명 = " + beforeName);
-		
-		System.out.println("변환 후 파일명 = " + afterName);
+		 String beforeName = "";  // 변환 전 파일명
+	        String afterName = "";   // 변환 후 파일명
+
+	        // 값을 입력받기 위한 스캐너 객체 생성
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("파일명을 입력해주세요.");
+	        
+	        // 파일명 받아오기
+	        beforeName = sc.nextLine();
+
+	        // 파일명을 .(점) 기준으로 잘라내고 배열에 선언
+	        // ex : ["파일명", "확장자"]
+	        String[] fileNameArray = beforeName.split("\\.");
+
+	        // 현재시간 구하기
+	        long timestamp = System.currentTimeMillis();
+	        // 첫번째 배열에 _ (언더바) 와 현재시간 붙이기
+	        fileNameArray[0] = fileNameArray[0] + "_" + timestamp;
+
+	        System.out.println(System.currentTimeMillis());
+	        System.out.println("변환 전 파일명 = " + beforeName);
+
+	        // 변환 파일명으로 문자 붙여주기기
+	        afterName = fileNameArray[0] + "."+fileNameArray[1];
+	        System.out.println("변환 후 파일명 = " + afterName);
+
 	}
 	
 	// 문제9. Scanner 클래스의 next() 메소드를 이용해서 사람 이름을 입력 받은 뒤
@@ -191,20 +248,47 @@ public class Exam03_My_Answer {
 	// 비밀번호 입력(5회) >>> 5555
 	// 횟수 초과
 	public static void q10() {
+	     String pw = "";  // 비밀번호
+	        // 값을 입력받기 위한 스캐너 객체 생성
+	        Scanner sc = new Scanner(System.in);
+
+	        String pwd = "1234abcd";
+
+	        for (int i = 1; i <=5 ; i++) {
+
+	            System.out.print("비밀번호 입력(" + i + ") >>> " );
+	            pw = sc.nextLine();
+	            // 비밀번호 길이가 5보다 작을경우
+	            if (!pw.equals(pwd)) {
+	                // 5째에 틀렸을경우
+	                if (i >= 5) {
+	                    System.out.println("횟수 초과");
+	                } else {
+	                    System.out.println("실패");
+	                }
+	            } else {
+	                System.out.println("성공");
+	                break;
+	            }
+
+	        }
+		/*
 		Scanner sc = new Scanner(System.in);
 		int count = 1;
+		
 		for (int n = count; n <= 5; n++) {
 			System.out.print("비밀번호 입력(" + count + "회) >>> ");
 			String pw = sc.next();
-			count++;
 			if(pw.equals("1234abcd")) {
 				System.out.println("성공");
 				return;
 			} else {
+				count++;
 				System.out.println("실패");
 			} 
 		}
 		System.out.println("횟수 초과");
+		*/
 
 		
 	}
@@ -229,8 +313,8 @@ public class Exam03_My_Answer {
 		//q8();
 		//System.out.println("=====문제9=====");
 		//q9();
-		//System.out.println("=====문제10===== 애매하다.");
-		//q10();
+		System.out.println("=====문제10===== 애매하다.");
+		q10();
 	}
 
 }
